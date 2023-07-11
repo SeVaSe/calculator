@@ -16,7 +16,15 @@ def menu_main():
 
 # наш textBox
 def input_entry(znak, entry):
-    entry.insert(END, znak)
+    if 'abs' not in znak:
+        entry.insert(END, znak)
+    elif 'abs' in znak:
+        strok = entry.get()
+        chislo_abs = strok.split(' ', 1)
+        abs_osn = f'abs({chislo_abs[0]})'
+        entry.delete(0, END)
+        entry.insert(END, abs_osn)
+
 
 # очистка textBox
 def clear_entry(entry):
@@ -31,9 +39,19 @@ def delete_znak(entry):
         entry.delete(0, END)
         entry.insert(0, new_text)
 
+# вычисления
 def answer_send(strok_entry):
     strok = strok_entry.get()
-    print(eval(strok))
+
+
+    try:
+        strok_entry.delete(0, END)
+        strok_entry.insert(0, eval(strok))
+    except:
+        strok_entry.insert(0, 'Ошибка!')
+
+
+
 
 
 
@@ -48,7 +66,7 @@ def knopki():
 
     ### первая строчка кнопок
     # возвести в степень
-    btn1 = Button(window, bg='black', fg='white', text='x^?', font=('', 15), command= lambda : input_entry('в разработке', entry))
+    btn1 = Button(window, bg='black', fg='white', text='x^?', font=('', 15), command= lambda : input_entry('**', entry))
     btn1.place(x=25, y=70, width=70, height=70)
 
     # стереть все
@@ -66,15 +84,15 @@ def knopki():
 
     ### вторая строчка кнопок
     # 1
-    btn4 = Button(window, bg='black', fg='white', text='1', font=('', 15), command= lambda : input_entry(1, entry))
+    btn4 = Button(window, bg='black', fg='white', text='1', font=('', 15), command= lambda : input_entry('1', entry))
     btn4.place(x=25, y=142, width=70, height=70)
 
     # 2
-    btn5 = Button(window, bg='black', fg='white', text='2', font=('', 15), command= lambda : input_entry(2, entry))
+    btn5 = Button(window, bg='black', fg='white', text='2', font=('', 15), command= lambda : input_entry('2', entry))
     btn5.place(x=98, y=142, width=70, height=70)
 
     # 3
-    btn6 = Button(window, bg='black', fg='white', text='3', font=('', 15), command= lambda : input_entry(3, entry))
+    btn6 = Button(window, bg='black', fg='white', text='3', font=('', 15), command= lambda : input_entry('3', entry))
     btn6.place(x=170, y=142, width=70, height=70)
 
     # -
@@ -84,15 +102,15 @@ def knopki():
 
     ### третья строчка кнопок
     # 4
-    btn7 = Button(window, bg='black', fg='white', text='4', font=('', 15), command= lambda : input_entry(4, entry))
+    btn7 = Button(window, bg='black', fg='white', text='4', font=('', 15), command= lambda : input_entry('4', entry))
     btn7.place(x=25, y=214, width=70, height=70)
 
     # 5
-    btn8 = Button(window, bg='black', fg='white', text='5', font=('', 15), command= lambda : input_entry(5, entry))
+    btn8 = Button(window, bg='black', fg='white', text='5', font=('', 15), command= lambda : input_entry('5', entry))
     btn8.place(x=98, y=214, width=70, height=70)
 
     # 6
-    btn9 = Button(window, bg='black', fg='white', text='6', font=('', 15), command= lambda : input_entry(6, entry))
+    btn9 = Button(window, bg='black', fg='white', text='6', font=('', 15), command= lambda : input_entry('6', entry))
     btn9.place(x=170, y=214, width=70, height=70)
 
     # *
@@ -102,15 +120,15 @@ def knopki():
 
     ### четвертая строчка кнопок
     # 7
-    btn7 = Button(window, bg='black', fg='white', text='7', font=('', 15), command= lambda : input_entry(7, entry))
+    btn7 = Button(window, bg='black', fg='white', text='7', font=('', 15), command= lambda : input_entry('7', entry))
     btn7.place(x=25, y=286, width=70, height=70)
 
     # 8
-    btn8 = Button(window, bg='black', fg='white', text='8', font=('', 15), command= lambda : input_entry(8, entry))
+    btn8 = Button(window, bg='black', fg='white', text='8', font=('', 15), command= lambda : input_entry('8', entry))
     btn8.place(x=98, y=286, width=70, height=70)
 
     # 9
-    btn9 = Button(window, bg='black', fg='white', text='9', font=('', 20), command= lambda : input_entry(9, entry))
+    btn9 = Button(window, bg='black', fg='white', text='9', font=('', 20), command= lambda : input_entry('9', entry))
     btn9.place(x=170, y=286, width=70, height=70)
 
     # ÷
@@ -119,21 +137,39 @@ def knopki():
 
 
     ### пятая строчка кнопок
-    # %
-    btn7 = Button(window, bg='black', fg='white', text='%', font=('', 15), command= lambda : input_entry('%', entry))
-    btn7.place(x=25, y=358, width=70, height=70)
+    # (
+    btn8 = Button(window, bg='black', fg='white', text='(', font=('', 15), command=lambda: input_entry('(', entry))
+    btn8.place(x=25, y=358, width=70, height=70)
 
     # 0
-    btn8 = Button(window, bg='black', fg='white', text='0', font=('', 15), command= lambda : input_entry(0, entry))
+    btn8 = Button(window, bg='black', fg='white', text='0', font=('', 15), command= lambda : input_entry('0', entry))
     btn8.place(x=98, y=358, width=70, height=70)
+
+    # )
+    btn8 = Button(window, bg='black', fg='white', text=')', font=('', 15), command=lambda: input_entry(')', entry))
+    btn8.place(x=170, y=358, width=70, height=70)
+
+    # %
+    btn8 = Button(window, bg='black', fg='white', text='%', font=('', 15), command=lambda: input_entry('%', entry))
+    btn8.place(x=242, y=358, width=70, height=70)
+
+
+    ### шестая строчка кнопок
+    # |x|
+    btn_persent = Button(window, bg='black', fg='white', text='|x|', font=('', 15), command=lambda: input_entry(' abs', entry))
+    btn_persent.place(x=98, y=430, width=70, height=70)
+
+    # sqrt
+    btn_sqrt = Button(window, bg='black', fg='white', text='√', font=('', 15), command=lambda: input_entry('√', entry))
+    btn_sqrt.place(x=25, y=430, width=70, height=70)
 
     # .
     btn9 = Button(window, bg='black', fg='white', text='.', font=('', 20), command= lambda : input_entry('.', entry))
-    btn9.place(x=170, y=358, width=70, height=70)
+    btn9.place(x=170, y=430, width=70, height=70)
 
     # =
     btn_umn = Button(window, bg='red', fg='white', text='=', font=('', 20), command= lambda : answer_send(entry))
-    btn_umn.place(x=242, y=358, width=70, height=70)
+    btn_umn.place(x=242, y=430, width=70, height=70)
 
 
 
