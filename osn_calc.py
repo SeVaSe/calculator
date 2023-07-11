@@ -55,6 +55,7 @@ def knopki():
     btn_minus = Button(window, bg='black', fg='white', text='-', font=('', 20))
     btn_minus.place(x=242, y=142, width=70, height=70)
 
+
     ### третья строчка кнопок
     # 7
     btn7 = Button(window, bg='black', fg='white', text='7', font=('', 15))
@@ -72,7 +73,8 @@ def knopki():
     btn_umn = Button(window, bg='black', fg='white', text='x', font=('', 20))
     btn_umn.place(x=242, y=214, width=70, height=70)
 
-    ### третья строчка кнопок
+
+    ### четвертая строчка кнопок
     # %
     btn7 = Button(window, bg='black', fg='white', text='%', font=('', 15))
     btn7.place(x=25, y=286, width=70, height=70)
@@ -88,6 +90,9 @@ def knopki():
     # =
     btn_umn = Button(window, bg='red', fg='white', text='=', font=('', 20))
     btn_umn.place(x=242, y=286, width=70, height=70)
+
+
+
 
 knopki()
 menu_main()
