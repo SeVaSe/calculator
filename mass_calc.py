@@ -6,7 +6,6 @@ def open_weight_window():
     weight_window.geometry('500x340')
 
 
-open_weight_window()
 
 
 
