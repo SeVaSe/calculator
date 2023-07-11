@@ -14,8 +14,27 @@ def menu_main():
     window.config(menu=main_menu)
 
 
+# наш textBox
 def input_entry(znak, entry):
     entry.insert(END, znak)
+
+# очистка textBox
+def clear_entry(entry):
+    entry.delete(0, END)
+
+# удалить 1 знак
+def delete_znak(entry):
+    current_text = entry.get()
+
+    if current_text:
+        new_text = current_text[:-1]
+        entry.delete(0, END)
+        entry.insert(0, new_text)
+
+def answer_send(strok_entry):
+    strok = strok_entry.get()
+    print(eval(strok))
+
 
 
 
@@ -33,11 +52,11 @@ def knopki():
     btn1.place(x=25, y=70, width=70, height=70)
 
     # стереть все
-    btn2 = Button(window, bg='black', fg='white', text='C', font=('', 15), command= lambda : input_entry('в разработке', entry))
+    btn2 = Button(window, bg='black', fg='white', text='C', font=('', 15), command= lambda : clear_entry(entry))
     btn2.place(x=98, y=70, width=70, height=70)
 
     # удалить один последний символ
-    btn3 = Button(window, bg='black', fg='white', text='del', font=('', 15), command= lambda : input_entry('в разработке', entry))
+    btn3 = Button(window, bg='black', fg='white', text='del', font=('', 15), command= lambda : delete_znak(entry))
     btn3.place(x=170, y=70, width=70, height=70)
 
     # +
@@ -91,7 +110,7 @@ def knopki():
     btn8.place(x=98, y=286, width=70, height=70)
 
     # 9
-    btn9 = Button(window, bg='black', fg='white', text='9', font=('', 20), command= lambda : input_entry('9', entry))
+    btn9 = Button(window, bg='black', fg='white', text='9', font=('', 20), command= lambda : input_entry(9, entry))
     btn9.place(x=170, y=286, width=70, height=70)
 
     # ÷
@@ -113,7 +132,7 @@ def knopki():
     btn9.place(x=170, y=358, width=70, height=70)
 
     # =
-    btn_umn = Button(window, bg='red', fg='white', text='=', font=('', 20))
+    btn_umn = Button(window, bg='red', fg='white', text='=', font=('', 20), command= lambda : answer_send(entry))
     btn_umn.place(x=242, y=358, width=70, height=70)
 
 
