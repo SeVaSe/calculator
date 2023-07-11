@@ -14,77 +14,84 @@ def menu_main():
     window.config(menu=main_menu)
 
 
+def input_entry(znak, entry):
+    entry.insert(END, znak)
+
+
+
+
 # функция расстановки кнопок
 def knopki():
     # строка ввода
     entry = Entry(window, width=19, font=('', 20))
     entry.place(x=25, y=30)
 
+
     ### первая строчка кнопок
     # 1
-    btn1 = Button(window, bg='black', fg='white', text='1', font=('', 15))
+    btn1 = Button(window, bg='black', fg='white', text='1', font=('', 15), command= lambda : input_entry(1, entry))
     btn1.place(x=25, y=70, width=70, height=70)
 
     # 2
-    btn2 = Button(window, bg='black', fg='white', text='2', font=('', 15))
+    btn2 = Button(window, bg='black', fg='white', text='2', font=('', 15), command= lambda : input_entry(2, entry))
     btn2.place(x=98, y=70, width=70, height=70)
 
     # 3
-    btn3 = Button(window, bg='black', fg='white', text='3', font=('', 15))
+    btn3 = Button(window, bg='black', fg='white', text='3', font=('', 15), command= lambda : input_entry(3, entry))
     btn3.place(x=170, y=70, width=70, height=70)
 
     # +
-    btn_plus = Button(window, bg='black', fg='white', text='+', font=('', 20))
+    btn_plus = Button(window, bg='black', fg='white', text='+', font=('', 20), command= lambda : input_entry('+', entry))
     btn_plus.place(x=242, y=70, width=70, height=70)
 
 
     ### вторая строчка кнопок
     # 4
-    btn4 = Button(window, bg='black', fg='white', text='4', font=('', 15))
+    btn4 = Button(window, bg='black', fg='white', text='4', font=('', 15), command= lambda : input_entry(4, entry))
     btn4.place(x=25, y=142, width=70, height=70)
 
     # 5
-    btn5 = Button(window, bg='black', fg='white', text='5', font=('', 15))
+    btn5 = Button(window, bg='black', fg='white', text='5', font=('', 15), command= lambda : input_entry(5, entry))
     btn5.place(x=98, y=142, width=70, height=70)
 
     # 6
-    btn6 = Button(window, bg='black', fg='white', text='6', font=('', 15))
+    btn6 = Button(window, bg='black', fg='white', text='6', font=('', 15), command= lambda : input_entry(6, entry))
     btn6.place(x=170, y=142, width=70, height=70)
 
     # -
-    btn_minus = Button(window, bg='black', fg='white', text='-', font=('', 20))
+    btn_minus = Button(window, bg='black', fg='white', text='-', font=('', 20), command= lambda : input_entry('-', entry))
     btn_minus.place(x=242, y=142, width=70, height=70)
 
 
     ### третья строчка кнопок
     # 7
-    btn7 = Button(window, bg='black', fg='white', text='7', font=('', 15))
+    btn7 = Button(window, bg='black', fg='white', text='7', font=('', 15), command= lambda : input_entry(7, entry))
     btn7.place(x=25, y=214, width=70, height=70)
 
     # 8
-    btn8 = Button(window, bg='black', fg='white', text='8', font=('', 15))
+    btn8 = Button(window, bg='black', fg='white', text='8', font=('', 15), command= lambda : input_entry(8, entry))
     btn8.place(x=98, y=214, width=70, height=70)
 
     # 9
-    btn9 = Button(window, bg='black', fg='white', text='9', font=('', 15))
+    btn9 = Button(window, bg='black', fg='white', text='9', font=('', 15), command= lambda : input_entry(9, entry))
     btn9.place(x=170, y=214, width=70, height=70)
 
     # *
-    btn_umn = Button(window, bg='black', fg='white', text='x', font=('', 20))
+    btn_umn = Button(window, bg='black', fg='white', text='x', font=('', 20), command= lambda : input_entry('x', entry))
     btn_umn.place(x=242, y=214, width=70, height=70)
 
 
     ### четвертая строчка кнопок
     # %
-    btn7 = Button(window, bg='black', fg='white', text='%', font=('', 15))
+    btn7 = Button(window, bg='black', fg='white', text='%', font=('', 15), command= lambda : input_entry('%', entry))
     btn7.place(x=25, y=286, width=70, height=70)
 
     # 0
-    btn8 = Button(window, bg='black', fg='white', text='0', font=('', 15))
+    btn8 = Button(window, bg='black', fg='white', text='0', font=('', 15), command= lambda : input_entry(0, entry))
     btn8.place(x=98, y=286, width=70, height=70)
 
     # ÷
-    btn9 = Button(window, bg='black', fg='white', text='÷', font=('', 20))
+    btn9 = Button(window, bg='black', fg='white', text='÷', font=('', 20), command= lambda : input_entry('÷', entry))
     btn9.place(x=170, y=286, width=70, height=70)
 
     # =
