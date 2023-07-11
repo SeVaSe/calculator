@@ -16,7 +16,7 @@ def menu_main():
 
 # наш textBox
 def input_entry(znak, entry):
-    if 'abs' not in znak:
+    if 'abs' not in znak and '√' not in znak:
         entry.insert(END, znak)
     elif 'abs' in znak:
         strok = entry.get()
@@ -24,6 +24,12 @@ def input_entry(znak, entry):
         abs_osn = f'abs({chislo_abs[0]})'
         entry.delete(0, END)
         entry.insert(END, abs_osn)
+    elif '√' in znak:
+        strok = entry.get()
+        sqrt_znak = strok.split(' ', 1)
+        sqrt_osn = f'{sqrt_znak[0]}**0.5'
+        entry.delete(0, END)
+        entry.insert(END, sqrt_osn)
 
 
 # очистка textBox
@@ -150,7 +156,7 @@ def knopki():
     btn8.place(x=170, y=358, width=70, height=70)
 
     # %
-    btn8 = Button(window, bg='black', fg='white', text='%', font=('', 15), command=lambda: input_entry('%', entry))
+    btn8 = Button(window, bg='black', fg='white', text='%', font=('', 15), command=lambda: input_entry(' %', entry))
     btn8.place(x=242, y=358, width=70, height=70)
 
 
@@ -160,7 +166,7 @@ def knopki():
     btn_persent.place(x=98, y=430, width=70, height=70)
 
     # sqrt
-    btn_sqrt = Button(window, bg='black', fg='white', text='√', font=('', 15), command=lambda: input_entry('√', entry))
+    btn_sqrt = Button(window, bg='black', fg='white', text='√', font=('', 15), command=lambda: input_entry(' √', entry))
     btn_sqrt.place(x=25, y=430, width=70, height=70)
 
     # .
