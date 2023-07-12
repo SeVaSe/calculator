@@ -87,6 +87,56 @@ def open_weight_window():
                 return f'{converted_digit} oz'
             conv_g_to_ct()
 
+        # конвертация килограммов
+
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '1. Грамм (г)':
+            # функция конвертации килограммов в граммы
+            def conv_kg_to_g():
+                converted_digit = digit * 1000
+                return f'{converted_digit} г'
+            conv_kg_to_g()
+
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '3. Миллиграмм (мг)':
+            # функция конвертации килограммов в миллиграммы
+            def conv_kg_to_mg():
+                converted_digit = digit * 1000000
+                return f'{converted_digit} мг'
+            conv_kg_to_mg()
+
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '4. Микрограмм (мкг)':
+            # функция конвертации килограммов в микрограммы
+            def conv_kg_to_mcg():
+                converted_digit = digit * 1000000000
+                return f'{converted_digit} мкг'
+            conv_kg_to_mcg()
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '5. Тонна (т)':
+            # функция конвертации килограммов в тонны
+            def conv_kg_to_t():
+                converted_digit = digit/0.001
+                return f'{converted_digit} т'
+            conv_kg_to_t()
+
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '6. Фунт (lb)':
+            # функция конвертации килограммов в фунты
+            def conv_kg_to_lb():
+                converted_digit = digit * 2.205
+                return f'{converted_digit} lb'
+            conv_kg_to_lb()
+
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '7. Унция (oz)':
+            # функция конвертации килограммов в унции
+            def conv_kg_to_oz():
+                converted_digit = digit * 35.274
+                return f'{converted_digit} oz'
+            conv_kg_to_oz()
+
+        elif unit1 == '2. Килограмм (кг)' and unit2 == '8. Карат (ct)':
+            # функция конвертации килограммов в караты
+            def conv_kg_to_ct():
+                converted_digit = digit * 5000
+                return f'{converted_digit} ct'
+            conv_kg_to_ct()
+
     # кнопка "Конвертировать"
     btn_convert = Button(weight_window, text='Отправить', command=clicked)
     btn_convert.place(x=60, y=100)
