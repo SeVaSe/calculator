@@ -5,7 +5,7 @@ from tkinter.ttk import Combobox
 def open_weight_window():
     # окно
     weight_window = Toplevel()
-    weight_window.title('Конвертатор единиц измерения массы')
+    weight_window.title('Конвертер единиц измерения массы')
     weight_window.geometry('340x500')
 
     # поле ввода
@@ -39,7 +39,7 @@ def open_weight_window():
             elif unit1 == '2. Килограмм (кг)':
                 conv_kg()
             elif unit1 == '3. Миллиграмм (мг)':
-                pass
+                conv_mg()
             elif unit1 == '4. Микрограмм (мкг)':
                 pass
             elif unit1 == '5. Тонна (т)':
@@ -96,7 +96,7 @@ def open_weight_window():
                 return f'{converted_digit} мкг'
 
             elif unit2 == '5. Тонна (т)':
-                converted_digit = digit / 0.001
+                converted_digit = digit / 1000
                 return f'{converted_digit} т'
 
             elif unit2 == '6. Фунт (lb)':
@@ -110,6 +110,38 @@ def open_weight_window():
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 5000
                 return f'{converted_digit} ct'
+
+        # функция конвертации миллиграммов
+        def conv_mg():
+            if unit2 == '1. Грамм (г)':
+                converted_digit = digit / 1000
+                return f'{converted_digit} г'
+
+            elif unit2 == '2. Килограмм (кг)':
+                converted_digit = digit / 1000000
+                return f'{converted_digit} мг'
+
+            elif unit2 == '4. Микрограмм (мкг)':
+                converted_digit = digit * 1000
+                return f'{converted_digit} мкг'
+
+            elif unit2 == '5. Тонна (т)':
+                converted_digit = digit / 1000000000
+                return f'{converted_digit} т'
+
+            elif unit2 == '6. Фунт (lb)':
+                converted_digit = digit * 0.00000220462
+                return f'{converted_digit} lb'
+
+            elif unit2 == '7. Унция (oz)':
+                converted_digit = digit * 0.000035274
+                return f'{converted_digit} oz'
+
+            elif unit2 == '8. Карат (ct)':
+                converted_digit = digit * 0.005
+                return f'{converted_digit} ct'
+
+
 
     # кнопка "Конвертировать"
     btn_convert = Button(weight_window, text='Отправить', command=clicked)
