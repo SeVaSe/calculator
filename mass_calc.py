@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.ttk import Combobox
 
-# функция для открывания окна
+# функция открывания окна
 def open_weight_window():
     # окно
     weight_window = Toplevel()
@@ -28,8 +28,7 @@ def open_weight_window():
     combo_output['values'] = ('1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)', '6. Фунт (lb)', '7. Унция (oz)', '8. Карат (ct)')
     combo_output.place(x=245, y=60)
 
-
-    # функция вывода ответа на ENTRY
+    # функция вывода результата конвертации на ENTRY
     def entry_out(conv):
         result_entry.delete(0, END)
         result_entry.insert(0, str(conv))
@@ -95,211 +94,223 @@ def open_weight_window():
         def conv_kg():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit * 1000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit * 1000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 1000000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 1000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit * 2.205
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 35.274
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 5000
-                return converted_digit
+                return entry_out(converted_digit)
 
         # функция конвертации миллиграммов
         def conv_mg():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit / 1000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit / 1000000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 1000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 1000000000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit * 0.00000220462
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 0.000035274
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 0.005
-                return converted_digit
+                return entry_out(converted_digit)
+
 
         # функция конвертации микрограммов
         def conv_mcg():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit / 1000000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit / 1000000000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit / 1000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 1000000000000
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit * 0.00000000220462
-                return converted_digit
+                return entry_out(converted_digit)
+
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 0.000000035274
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 0.000005
-                return converted_digit
+                return entry_out(converted_digit)
 
         # функция конвертации тонн
         def conv_t():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit * 1000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit * 1000000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 1000000000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit * 1000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit * 2204.62
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 35274
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 5000000
-                return converted_digit
+                return entry_out(converted_digit)
 
-            # функция конвертации фунтов
+        # функция конвертации фунтов
         def conv_lb():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit * 453.6
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit * 0.453592
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit * 453592.37
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 453592370
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit * 0.000453592
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 16
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 453.59237
-                return converted_digit
+                return entry_out(converted_digit)
 
         # функция конвертации унций
         def conv_oz():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit * 28.35
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit * 35.273
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit * 28350
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 28349.52
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit * 0.0000283495
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit / 16
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 141.7475
-                return converted_digit
+                return entry_out(converted_digit)
 
         # функция конвертации каратов
         def conv_ct():
             if unit2 == '1. Грамм (г)':
                 converted_digit = digit * 0.2
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit * 0.0002
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit * 200
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 200000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 5000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit / 2268
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit / 141.7
-                return converted_digit
+                return entry_out(converted_digit)
 
         convertation()
 
