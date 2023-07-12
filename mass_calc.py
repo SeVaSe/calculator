@@ -28,6 +28,12 @@ def open_weight_window():
     combo_output['values'] = ('1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)', '6. Фунт (lb)', '7. Унция (oz)', '8. Карат (ct)')
     combo_output.place(x=245, y=60)
 
+
+    # функция вывода ответа на ENTRY
+    def entry_out(conv):
+        result_entry.delete(0, END)
+        result_entry.insert(0, str(conv))
+
     # функция отправки значений, необходимых для конвертации
     def clicked():
         digit = int(digit_input.get())
@@ -59,31 +65,31 @@ def open_weight_window():
         def conv_g():
             if unit2 == '2. Килограмм (кг)':
                 converted_digit = digit / 1000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit * 1000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 1000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 1000000
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit / 453592
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit / 28.35
-                return converted_digit
+                return entry_out(converted_digit)
 
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit / 0.2
-                return converted_digit
+                return entry_out(converted_digit)
 
         # функция конвертации килограммов
         def conv_kg():
@@ -295,6 +301,7 @@ def open_weight_window():
                 converted_digit = digit / 141.7
                 return converted_digit
 
+        convertation()
 
     # кнопка "Конвертировать"
     btn_convert = Button(weight_window, text='Конвертировать', command=clicked)
