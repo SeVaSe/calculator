@@ -51,9 +51,9 @@ def open_weight_window():
             elif unit1 == '6. Фунт (lb)':
                 conv_lb()
             elif unit1 == '7. Унция (oz)':
-                pass
+                conv_oz()
             elif unit1 == '8. Карат (ct)':
-                pass
+                conv_ct()
 
         # функция конвертации граммов
         def conv_g():
