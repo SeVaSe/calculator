@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter.ttk import Combobox
 
+
 # функция открывания окна
 def open_weight_window():
     # окно
@@ -18,14 +19,20 @@ def open_weight_window():
 
     # виджет Combobox для выбора единицы измерения
     combo_input = Combobox(weight_window, width=29, height=13)
-    combo_input['values'] = ('1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)', '6. Фунт (lb)', '7. Унция (oz)', '8. Карат (ct)')
+    combo_input['values'] = (
+        '1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)',
+        '6. Фунт (lb)',
+        '7. Унция (oz)', '8. Карат (ct)')
     combo_input.place(x=30, y=60)
 
     lbl = Label(weight_window, text='=')
     lbl.place(x=230, y=35)
 
     combo_output = Combobox(weight_window, width=29, height=13)
-    combo_output['values'] = ('1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)', '6. Фунт (lb)', '7. Унция (oz)', '8. Карат (ct)')
+    combo_output['values'] = (
+        '1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)',
+        '6. Фунт (lb)',
+        '7. Унция (oz)', '8. Карат (ct)')
     combo_output.place(x=245, y=60)
 
     # функция вывода результата конвертации на ENTRY
@@ -39,10 +46,10 @@ def open_weight_window():
         unit1 = combo_input.get()
         unit2 = combo_output.get()
 
-        #
+        # функция- организатор функций конвертации
         def convertation():
             if unit1 == unit2:
-                pass
+                entry_out(digit)
             elif unit1 == '1. Грамм (г)':
                 conv_g()
             elif unit1 == '2. Килограмм (кг)':
@@ -126,36 +133,29 @@ def open_weight_window():
                 converted_digit = digit / 1000
                 return entry_out(converted_digit)
 
-
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit / 1000000
                 return entry_out(converted_digit)
-
 
             elif unit2 == '4. Микрограмм (мкг)':
                 converted_digit = digit * 1000
                 return entry_out(converted_digit)
 
-
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 1000000000
                 return entry_out(converted_digit)
-
 
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit * 0.00000220462
                 return entry_out(converted_digit)
 
-
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 0.000035274
                 return entry_out(converted_digit)
 
-
             elif unit2 == '8. Карат (ct)':
                 converted_digit = digit * 0.005
                 return entry_out(converted_digit)
-
 
         # функция конвертации микрограммов
         def conv_mcg():
@@ -163,26 +163,21 @@ def open_weight_window():
                 converted_digit = digit / 1000000
                 return entry_out(converted_digit)
 
-
             elif unit2 == '2. Килограмм (кг)':
                 converted_digit = digit / 1000000000
                 return entry_out(converted_digit)
-
 
             elif unit2 == '3. Миллиграмм (мг)':
                 converted_digit = digit / 1000
                 return entry_out(converted_digit)
 
-
             elif unit2 == '5. Тонна (т)':
                 converted_digit = digit / 1000000000000
                 return entry_out(converted_digit)
 
-
             elif unit2 == '6. Фунт (lb)':
                 converted_digit = digit * 0.00000000220462
                 return entry_out(converted_digit)
-
 
             elif unit2 == '7. Унция (oz)':
                 converted_digit = digit * 0.000000035274
@@ -317,4 +312,3 @@ def open_weight_window():
     # кнопка "Конвертировать"
     btn_convert = Button(weight_window, text='Конвертировать', command=clicked)
     btn_convert.place(x=190, y=100)
-
