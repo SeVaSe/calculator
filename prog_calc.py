@@ -48,267 +48,264 @@ def open_programming_window():
         unit1 = combo_input.get()
         unit2 = combo_output.get()
 
-        def conversation():
-            if unit1 == unit2:
-                entry_out(digit)
-            elif unit1 == '1. Бит (bit)':
-                conv_bit()
-            elif unit1 == '2. Байт (byte)':
-                conv_byte()
-            elif unit1 == '3. Килобайт (KB)':
-                conv_kb()
-            elif unit1 == '4. Мегабайт (MB)':
-                conv_mb()
-            elif unit1 == '5. Гигабайт (GB)':
-                conv_gb()
-            elif unit1 == '6. Терабайт (TB)':
-                conv_tb()
-            elif unit1 == '7. Петабайт (PB)':
-                conv_pb()
-            elif unit1 == '8. Эксабайт (EB)':
-                conv_eb()
+        if unit1 == unit2:
+            entry_out(digit)
+        elif unit1 == '1. Бит (bit)':
+            conv_bit(unit2, digit)
+        elif unit1 == '2. Байт (byte)':
+            conv_byte(unit2, digit)
+        elif unit1 == '3. Килобайт (KB)':
+            conv_kb(unit2, digit)
+        elif unit1 == '4. Мегабайт (MB)':
+            conv_mb(unit2, digit)
+        elif unit1 == '5. Гигабайт (GB)':
+            conv_gb(unit2, digit)
+        elif unit1 == '6. Терабайт (TB)':
+            conv_tb(unit2, digit)
+        elif unit1 == '7. Петабайт (PB)':
+            conv_pb(unit2, digit)
+        elif unit1 == '8. Эксабайт (EB)':
+            conv_eb(unit2, digit)
 
-        # функция конвертации битов
-        def conv_bit():
-            if unit2 == '2. Байт (byte)':
-                converted_digit = digit / 8
-                return entry_out(converted_digit)
+    # функция конвертации битов
+    def conv_bit(unit2, digit):
+        if unit2 == '2. Байт (byte)':
+            converted_digit = digit / 8
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = (digit / 8) / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = (digit / 8) / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = ((digit / 8) / 1024) / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = ((digit / 8) / 1024) / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = (((digit / 8) / 1024) / 1024) / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = (((digit / 8) / 1024) / 1024) / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = ((((digit / 8) / 1024) / 1024) / 1024) / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = ((((digit / 8) / 1024) / 1024) / 1024) / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = (((((digit / 8) / 1024) / 1024) / 1024) / 1024) / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = (((((digit / 8) / 1024) / 1024) / 1024) / 1024) / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 8 / 1024 / 1024 / 1024 / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 8 / 1024 / 1024 / 1024 / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
         # функция конвертации байтов
-        def conv_byte():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8
-                return entry_out(converted_digit)
+    def conv_byte(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = digit / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = digit / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = digit / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = digit / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = digit / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = digit / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = digit / 1024 / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = digit / 1024 / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = digit / 1024 / 1024 / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = digit / 1024 / 1024 / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 1024 / 1024 / 1024 / 1024 / 1024 / 1204
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 1024 / 1024 / 1024 / 1024 / 1024 / 1204
+            return entry_out(converted_digit)
 
-        # функция конвертации килобайтов
-        def conv_kb():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8 * 1024
-                return entry_out(converted_digit)
+    # функция конвертации килобайтов
+    def conv_kb(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '2. Байт (byte)':
-                converted_digit = digit * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '2. Байт (byte)':
+            converted_digit = digit * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = digit / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = digit / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = digit / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = digit / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = digit / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = digit / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = digit / 1024 / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = digit / 1024 / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 1024 / 1024 / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 1024 / 1024 / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
         # функция конвертации мегабайтов
-        def conv_mb():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8 * 1024 * 1024
-                return entry_out(converted_digit)
+    def conv_mb(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '2. Байт (byte)':
-                converted_digit = digit * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '2. Байт (byte)':
+            converted_digit = digit * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = digit * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = digit * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = digit / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = digit / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = digit / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = digit / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = digit / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = digit / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 1024 / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 1024 / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
         # функция конвертации гигабайтов
-        def conv_gb():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+    def conv_gb(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = digit * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = digit * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = digit * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = digit * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '2. Байт (byte)':
-                converted_digit = digit * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '2. Байт (byte)':
+            converted_digit = digit * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = digit / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = digit / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = digit / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = digit / 1024 / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 1024 / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 1024 / 1024 / 1024
+            return entry_out(converted_digit)
 
-        # функция конвертации терабайтов
-        def conv_tb():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8 * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+    # функция конвертации терабайтов
+    def conv_tb(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8 * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '2. Байт (byte)':
-                converted_digit = digit * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '2. Байт (byte)':
+            converted_digit = digit * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = digit * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = digit * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = digit * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = digit * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = digit * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = digit * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = digit / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = digit / 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 1024 / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 1024 / 1024
+            return entry_out(converted_digit)
 
-        # функция конвертации петабайтов
-        def conv_pb():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8 * 1024 * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+    # функция конвертации петабайтов
+    def conv_pb(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8 * 1024 * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '2. Байт (byte)':
-                converted_digit = digit * 1024 * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '2. Байт (byte)':
+            converted_digit = digit * 1024 * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = digit * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = digit * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = digit * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = digit * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = digit * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = digit * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = digit * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = digit * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '8. Эксабайт (EB)':
-                converted_digit = digit / 1024
-                return entry_out(converted_digit)
+        elif unit2 == '8. Эксабайт (EB)':
+            converted_digit = digit / 1024
+            return entry_out(converted_digit)
 
-        # функция конвертации эксабайтов
-        def conv_eb():
-            if unit2 == '1. Бит (bit)':
-                converted_digit = digit * 8 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+    # функция конвертации эксабайтов
+    def conv_eb(unit2, digit):
+        if unit2 == '1. Бит (bit)':
+            converted_digit = digit * 8 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '2. Байт (byte)':
-                converted_digit = digit * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '2. Байт (byte)':
+            converted_digit = digit * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '3. Килобайт (KB)':
-                converted_digit = digit * 1024 * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '3. Килобайт (KB)':
+            converted_digit = digit * 1024 * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '4. Мегабайт (MB)':
-                converted_digit = digit * 1024 * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '4. Мегабайт (MB)':
+            converted_digit = digit * 1024 * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '5. Гигабайт (GB)':
-                converted_digit = digit * 1024 * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '5. Гигабайт (GB)':
+            converted_digit = digit * 1024 * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '6. Терабайт (TB)':
-                converted_digit = digit * 1024 * 1024
-                return entry_out(converted_digit)
+        elif unit2 == '6. Терабайт (TB)':
+            converted_digit = digit * 1024 * 1024
+            return entry_out(converted_digit)
 
-            elif unit2 == '7. Петабайт (PB)':
-                converted_digit = digit * 1024
-                return entry_out(converted_digit)
-
-        conversation()
+        elif unit2 == '7. Петабайт (PB)':
+            converted_digit = digit * 1024
+            return entry_out(converted_digit)
 
     # кнопка "Конвертировать"
     btn_convert = Button(prog_window, text='Конвертировать', command=clicked)
