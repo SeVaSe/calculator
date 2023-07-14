@@ -5,16 +5,16 @@ from tkinter.ttk import Combobox
 # функция открывания окна
 def open_weight_window():
     # окно
-    weight_window = Toplevel()
+    weight_window = Toplevel(bg="#666666")
     weight_window.title('Конвертер единиц измерения массы')
     weight_window.geometry('500x150')
     weight_window.resizable(height=False, width=False)
 
     # поле ввода
-    digit_input = Entry(weight_window, width=13, font=('', 20))
+    digit_input = Entry(weight_window, width=13, font=('', 20), bg="#333333", fg="white")
     digit_input.place(x=30, y=30)
 
-    result_entry = Entry(weight_window, width=13, font=('', 20))
+    result_entry = Entry(weight_window, width=13, font=('', 20), bg="#333333", fg="white")
     result_entry.place(x=245, y=30)
 
     # виджет Combobox для выбора единицы измерения
@@ -23,9 +23,9 @@ def open_weight_window():
         '1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)',
         '6. Фунт (lb)',
         '7. Унция (oz)', '8. Карат (ct)')
-    combo_input.place(x=30, y=60)
+    combo_input.place(x=31, y=65)
 
-    lbl = Label(weight_window, text='=')
+    lbl = Label(weight_window, text='=', bg="#666666")
     lbl.place(x=230, y=35)
 
     combo_output = Combobox(weight_window, width=29, height=13)
@@ -33,7 +33,7 @@ def open_weight_window():
         '1. Грамм (г)', '2. Килограмм (кг)', '3. Миллиграмм (мг)', '4. Микрограмм (мкг)', '5. Тонна (т)',
         '6. Фунт (lb)',
         '7. Унция (oz)', '8. Карат (ct)')
-    combo_output.place(x=245, y=60)
+    combo_output.place(x=246, y=65)
 
     # функция вывода результата конвертации на ENTRY
     def entry_out(conv):
@@ -55,7 +55,7 @@ def open_weight_window():
         elif unit1 == '3. Миллиграмм (мг)':
             conv_mg(unit2, digit)
         elif unit1 == '4. Микрограмм (мкг)':
-             conv_mcg(unit2, digit)
+            conv_mcg(unit2, digit)
         elif unit1 == '5. Тонна (т)':
             conv_t(unit2, digit)
         elif unit1 == '6. Фунт (lb)':
@@ -66,6 +66,7 @@ def open_weight_window():
             conv_ct(unit2, digit)
 
         # функция конвертации граммов
+
     def conv_g(unit2, digit):
         if unit2 == '2. Килограмм (кг)':
             converted_digit = digit / 1000
@@ -126,6 +127,7 @@ def open_weight_window():
             return entry_out(converted_digit)
 
         # функция конвертации миллиграммов
+
     def conv_mg(unit2, digit):
         if unit2 == '1. Грамм (г)':
             converted_digit = digit / 1000
@@ -186,6 +188,7 @@ def open_weight_window():
             return entry_out(converted_digit)
 
         # функция конвертации тонн
+
     def conv_t(unit2, digit):
         if unit2 == '1. Грамм (г)':
             converted_digit = digit * 1000000
@@ -246,6 +249,7 @@ def open_weight_window():
             return entry_out(converted_digit)
 
         # функция конвертации унций
+
     def conv_oz(unit2, digit):
         if unit2 == '1. Грамм (г)':
             converted_digit = digit * 28.35
@@ -305,7 +309,6 @@ def open_weight_window():
             converted_digit = digit / 141.7
             return entry_out(converted_digit)
 
-
     # кнопка "Конвертировать"
-    btn_convert = Button(weight_window, text='Конвертировать', command=clicked)
+    btn_convert = Button(weight_window, text='Конвертировать', command=clicked, bg="#333333", fg="white")
     btn_convert.place(x=190, y=100)
